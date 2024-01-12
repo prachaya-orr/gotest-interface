@@ -66,7 +66,7 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 
 	t.Run("StatusNotFound", func(t *testing.T) {
 		// Arrange
-		amount := 100
+		amount := 0
 		expectedStatusCode := fiber.StatusNotFound
 
 		promoService := services.NewPromotionServiceMock()
@@ -81,7 +81,7 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 
 		// Act
 		res, err := app.Test(req)
-
+		fmt.Printf("%#v", res)
 		// Assert
 		assert.Nil(t, err)
 		assert.Equal(t, expectedStatusCode, res.StatusCode)
