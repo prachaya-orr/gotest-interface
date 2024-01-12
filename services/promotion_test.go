@@ -28,7 +28,7 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
-			//Arrage
+			//Arrange
 			promoRepo := repositories.NewPromotionRepositoryMock()
 			promoRepo.On("GetPromotion").Return(repositories.Promotion{
 				ID:              1,
@@ -48,7 +48,7 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 	}
 
 	t.Run("purchase amount zero", func(t *testing.T) {
-		//Arrage
+		//Arrange
 		promoRepo := repositories.NewPromotionRepositoryMock()
 		promoRepo.On("GetPromotion").Return(repositories.Promotion{
 			ID:              1,
@@ -67,7 +67,7 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 	})
 
 	t.Run("repository error", func(t *testing.T) {
-		//Arrage
+		//Arrange
 		promoRepo := repositories.NewPromotionRepositoryMock()
 		promoRepo.On("GetPromotion").Return(repositories.Promotion{}, errors.New(""))
 

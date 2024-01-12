@@ -5,7 +5,7 @@ import (
 )
 
 type PromotionService interface {
-	CalculateDiscount(amount int) (int, error)
+	CalculateDiscount(amount int) (discount int, err error)
 }
 
 type promotionService struct {
