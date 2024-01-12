@@ -1,3 +1,5 @@
+//go:build unit
+
 package handlers_test
 
 import (
@@ -81,7 +83,6 @@ func TestPromotionCalculateDiscount(t *testing.T) {
 
 		// Act
 		res, err := app.Test(req)
-		fmt.Printf("%#v", res)
 		// Assert
 		assert.Nil(t, err)
 		assert.Equal(t, expectedStatusCode, res.StatusCode)
